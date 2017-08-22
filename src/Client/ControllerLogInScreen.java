@@ -1,17 +1,7 @@
-package Authentication;
+package Client;
 
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
-import java.awt.event.MouseEvent;
-import java.io.IOException;
 
 public class ControllerLogInScreen {
 
@@ -26,18 +16,18 @@ public class ControllerLogInScreen {
     }
 
     public void registrationButtonAction() {
-        Main main = new Main();
+        Client client = new Client();
         try {
-            main.setRegistrationLayOut();
+            client.setRegistrationLayOut();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void backButtonAction() {
-        Main main = new Main();
+        Client client = new Client();
         try {
-            main.setLogInLayOut();
+            client.setLogInLayOut();
         } catch (Exception e) {
             e.printStackTrace();
         }
