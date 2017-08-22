@@ -1,34 +1,29 @@
 package Server;
 
-import java.io.DataInputStream;
-import java.io.DataOutput;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Server{
+public class Server implements ServerRI{
     public Server() {}
 
     public String sayHello() {
         return "Hello, world!";
     }
 
-    public static void main(String args[]) throws InterruptedException{
-        try (ServerSocket server = new ServerSocket(3345)){
-            Socket client = server.accept();
-            DataOutputStream out = new DataOutputStream(client.getOutputStream());
-            DataInputStream in = new DataInputStream(client.getInputStream());
+    public static void main(String args[]) {
+        try {
+            Server obj = new Server();
+            ServerRI stub = (ServerRI) UnicastRemoteObject.exportObject(obj, 2005);
 
-            while(!client.isClosed()){
+            // Bind the remote object's stub in the registry
+            Registry registry = LocateRegistry.getRegistry();
+            registry.bind("ServerRI", stub);
 
-            }
-
-        } catch (IOException e) {
+            System.err.println("Server ready");
+        } catch (Exception e) {
+            System.err.println("Server exception: " + e.toString());
             e.printStackTrace();
         }
     }

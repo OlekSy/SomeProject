@@ -1,5 +1,6 @@
 package Client;
 
+import Server.ServerRI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,9 +45,8 @@ public class Client extends Application {
     }
 
     public static void main(String[] args) {
-        String host = (args.length < 1) ? null : args[0];
         try {
-            Registry registry = LocateRegistry.getRegistry(host);
+            Registry registry = LocateRegistry.getRegistry(2005);
             ServerRI stub = (ServerRI) registry.lookup("ServerRI");
             String response = stub.sayHello();
             System.out.println("response: " + response);
