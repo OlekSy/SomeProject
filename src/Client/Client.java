@@ -22,6 +22,9 @@ public class Client extends Application {
     public void start(Stage primaryStage) throws Exception{
         mainStage = primaryStage;
 
+        mainStage.setMinHeight(400);
+        mainStage.setMinWidth(600);
+
         logInLayOut = FXMLLoader.load(getClass().getResource("LogInScreen.fxml"));
         logInScene = new Scene(logInLayOut, 600, 400);
 
@@ -31,6 +34,8 @@ public class Client extends Application {
     }
 
     public void setLogInLayOut() throws Exception{
+        mainStage.setMinHeight(400);
+        mainStage.setMinWidth(600);
         logInLayOut = FXMLLoader.load(getClass().getResource("LogInScreen.fxml"));
         logInScene = new Scene(logInLayOut, 600, 400);
         mainStage.setTitle("LogIn Scene");
@@ -38,6 +43,8 @@ public class Client extends Application {
     }
 
     public void setRegistrationLayOut() throws Exception{
+        mainStage.setMinHeight(400);
+        mainStage.setMinWidth(600);
         registrationLayOut = FXMLLoader.load(getClass().getResource("Registration.fxml"));
         signUpScene = new Scene(registrationLayOut, 600, 400);
         mainStage.setTitle("Registration Scene");
@@ -45,15 +52,15 @@ public class Client extends Application {
     }
 
     public static void main(String[] args) {
-        try {
-            Registry registry = LocateRegistry.getRegistry(2005);
-            ServerRI stub = (ServerRI) registry.lookup("ServerRI");
-            String response = stub.sayHello();
-            System.out.println("response: " + response);
-        } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
-            e.printStackTrace();
-        }
+//        try {
+//            Registry registry = LocateRegistry.getRegistry(2005);
+//            ServerRI stub = (ServerRI) registry.lookup("ServerRI");
+//            String response = stub.sayHello();
+//            System.out.println("response: " + response);
+//        } catch (Exception e) {
+//            System.err.println("Client exception: " + e.toString());
+//            e.printStackTrace();
+//        }
 
         launch(args);
     }
