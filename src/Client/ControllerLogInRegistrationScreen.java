@@ -3,7 +3,7 @@ package Client;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class ControllerLogInScreen {
+public class ControllerLogInRegistrationScreen {
 
     @FXML
     Button registrationButton;
