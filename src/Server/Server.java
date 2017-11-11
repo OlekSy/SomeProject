@@ -37,9 +37,7 @@ public class Server extends Thread{
         }
     }
 
-    public void send(String message){
-        for(MonoThreadClientHandler temp : clients){
-            temp.getOut().println(message);
-        }
+    public void send(String message, MonoThreadClientHandler client){
+        client.getOut().println(message);
     }
 }

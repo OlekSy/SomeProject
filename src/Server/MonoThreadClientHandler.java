@@ -26,8 +26,7 @@ public class MonoThreadClientHandler extends Thread{
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(client.getOutputStream())), true);
             while(true){
                 input = in.readLine();
-//                System.out.println("Message: " + input);
-                server.send(input);
+                server.send(input, this);
             }
         } catch (IOException e){}
     }
