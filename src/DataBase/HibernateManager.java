@@ -1,20 +1,16 @@
 package DataBase;
 
 import DataBase.ModelClasses.User;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.loader.custom.sql.SQLCustomQuery;
-
-import javax.jws.soap.SOAPBinding;
 
 import java.util.List;
 
-public class Main {
+public class HibernateManager {
+
     private static final SessionFactory ourSessionFactory;
 
     static {
@@ -49,7 +45,7 @@ public class Main {
 //            session.close();
 //        }
         List<User> users = null;
-        Session session = Main.getSession();
+        Session session = HibernateManager.getSession();
 
         session.beginTransaction();
 

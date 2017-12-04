@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ControllerLogInRegistrationScreen">
+<StackPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ControllerLogInScreen">
   <children>
-    <Button mnemonicParsing="false" prefWidth="70.0" text="SignIn">
+    <Button fx:id="signIn" mnemonicParsing="false" onAction="#signInOnAction" prefWidth="70.0" text="SignIn">
       <StackPane.margin>
         <Insets top="70.0" />
       </StackPane.margin>
@@ -19,12 +19,12 @@
         <Insets top="130.0" />
       </StackPane.margin>
     </Button>
-    <TextField maxWidth="-Infinity" prefWidth="200.0">
+    <TextField fx:id="username" maxWidth="-Infinity" prefWidth="200.0">
       <StackPane.margin>
         <Insets top="-60.0" />
       </StackPane.margin>
     </TextField>
-    <PasswordField maxWidth="-Infinity" prefWidth="200.0" />
+    <PasswordField fx:id="password" maxWidth="-Infinity" prefWidth="200.0" />
     <Label text="Username">
       <StackPane.margin>
         <Insets right="270.0" top="-60.0" />

@@ -13,6 +13,7 @@
         <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
         <property name="hbm2ddl.auto">update</property>
 
+        <mapping class="DataBase.ModelClasses.User"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

@@ -1,4 +1,11 @@
 package DataBase.ModelClasses;
 
-public class Model {
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Model {
+
+    public Model() {
+
+    }
 }
