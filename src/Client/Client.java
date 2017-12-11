@@ -37,6 +37,7 @@ public class Client extends Application {
     }
 
     public void setLogInLayOut() throws Exception{
+
         mainStage.setMinHeight(400);
         mainStage.setMinWidth(600);
         logInLayOut = FXMLLoader.load(getClass().getResource("LogInScreen.fxml"));
