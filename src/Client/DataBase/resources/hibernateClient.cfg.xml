@@ -4,16 +4,14 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/projectdb</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:localDB</property>
         <!--<property name="current_session_context_class">thread</property> -->
         <property name="show_sql">true</property>
-        <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="dialect">Client.DataBase.SQLiteDialect</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="Server.DataBase.ModelClasses.User"/>
+        <mapping class="Client.DataBase.ModelClasses.FavoriteServer"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

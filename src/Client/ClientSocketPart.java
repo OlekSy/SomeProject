@@ -33,14 +33,14 @@ public class ClientSocketPart extends Thread{
         }
         Socket socket;
         try{
-            socket = new Socket(address, 8080);
+            socket = new Socket(address, 8070);
 
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
             while(true){
                 message = in.readLine();
-                if(message == null) break;
+//                if(message == null) break;
                 switch(controller){
                     case 1: {
                         controllerLogInScreen.receive(message);
@@ -70,4 +70,5 @@ public class ClientSocketPart extends Thread{
     public void send(String message){
         out.println(message);
     }
+
 }

@@ -38,6 +38,28 @@ public class UserContext extends Context {
         return u;
     }
 
+    public boolean verifyUser(String name, String password) {
+
+
+        Transaction trns = null;
+
+        try {
+            trns = session.beginTransaction();
+            String queryString = "from User where nickName = :name and password = :password";
+            Query query = session.createQuery(queryString);
+            query.setString("name", name);
+            query.setString("password", password);
+            session.getTransaction().commit();
+            if(query.list().toArray().length != 0) return true;
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            //session.flush();
+            //session.close();
+        }
+        return false;
+    }
+
     public void deleteUser(int id) {
         Transaction trns = null;
 

@@ -65,5 +65,6 @@ public class Client extends Application {
 
     public void send(String message){
         clientSocketPart.send(message);
+
     }
 }

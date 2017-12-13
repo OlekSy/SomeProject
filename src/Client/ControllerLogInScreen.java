@@ -28,8 +28,12 @@ public class ControllerLogInScreen {
     }
 
     public void signInOnAction(){
-        client.send(username.getText());
+        StringBuilder message = new StringBuilder();
+        message.append("001").append(username.getText()).append("%").append(password.getText());
+        String messageToSend = message.toString();
+        client.send(messageToSend);
         username.clear();
+        password.clear();
     }
 
     public void receive(String message){
